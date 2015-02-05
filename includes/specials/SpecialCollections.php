@@ -23,9 +23,10 @@ class SpecialCollections extends SpecialPage {
 			$args = explode( '/', $subpage );
 			// If there is a user argument, that's what we want to use
 			if ( isset( $args[0] ) ) {
+				// FIXME: Add error checking?
 				$user = User::newFromName( $args[0] );
 			} else {
-				// Otherwise just show the users page
+				// Otherwise just show the user's page
 				$user = $this->getUser();
 			}
 		} else {
