@@ -5,7 +5,7 @@
 abstract class CollectionStore {
 	/**
 	 * Get titles of all pages in the current collection.
-	 * @return Array titles
+	 * @return array titles
 	 */
 	abstract public function getTitles();
 }
