@@ -24,9 +24,11 @@ class CollectionItemCardView extends View {
 		$page = $this->item;
 		$title = $page->getTitle();
 		$html = Html::openElement( 'div', array( 'class' => 'collection-item' ) ) .
-			Html::element(
-				'h2', array( 'class' => 'collection-item-title' ), $title->getText()
-			) .
+			Html::openElement( 'h2', array( 'class' => 'collection-item-title' ) ) .
+			Html::element( 'a', array( 'href' => $title->getLocalUrl() ),
+				$title->getText()
+			).
+			Html::closeElement( 'h2' ) .
 			Html::openElement( 'div', array( 'class' => 'collection-item-footer' ) ) .
 			Html::element( 'a',
 				array(
