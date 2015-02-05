@@ -18,6 +18,14 @@ class CollectionItemCardView extends View {
 	}
 
 	/**
+	 * Returns title of collection page
+	 * @returns string collection page title
+	 */
+	public function getTitle() {
+		return $this->item->getTitle()->getText();
+	}
+
+	/**
 	 * @inheritdoc
 	 */
 	protected function getHtml() {
@@ -26,7 +34,7 @@ class CollectionItemCardView extends View {
 		$html = Html::openElement( 'div', array( 'class' => 'collection-item' ) ) .
 			Html::openElement( 'h2', array( 'class' => 'collection-item-title' ) ) .
 			Html::element( 'a', array( 'href' => $title->getLocalUrl() ),
-				$title->getText()
+				$this->getTitle()
 			).
 			Html::closeElement( 'h2' ) .
 			Html::openElement( 'div', array( 'class' => 'collection-item-footer' ) ) .

@@ -16,6 +16,14 @@ abstract class View {
 	abstract protected function getHtml();
 
 	/**
+	 * Returns the title for the view
+	 *
+	 * @private
+	 * @return string Html
+	 */
+	abstract protected function getTitle();
+
+	/**
 	 * Adds HTML of the view to the OutputPage.
 	 *
 	 * @param OutputPage $out

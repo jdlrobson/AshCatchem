@@ -16,6 +16,14 @@ class WatchlistCollectionStore extends CollectionStore {
 	}
 
 	/**
+	 * @inheritdoc
+	 */
+	public function getId() {
+		// Watchlist has hardcoded id of 0
+		return 0;
+	}
+
+	/**
 	 * Initialise WatchlistCollectionStore from database
 	 *
 	 * @param User $user to lookup watchlist members for
