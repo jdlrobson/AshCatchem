@@ -2,5 +2,10 @@
 	"@metadata": {
 		"authors": []
 	},
-	"ext-gather-desc": "Extension description."
+	"ext-gather-desc": "Extension description.",
+	"mobile-frontend-collection-watchlist-title": "Title used for special casing the Watchlist collection on the [[Special:Collections]] page. ",
+	"mobile-frontend-collection-watchlist-description": "Default description for special casing the Watchlist collection on the [[Special:Collections]] page.",
+	"mobile-frontend-collection-read-more": "Label for the read more link used on [[Special:Collections]].",
+	"mobile-frontend-collection-empty": "Message shown on an empty rendered collection on [[Special:Collections]].",
+	"mobile-frontend-collection-empty-footer": "Footnote shown on an empty rendered collection on [[Special:Collections]]."
 }

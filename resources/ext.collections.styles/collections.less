@@ -1,0 +1,89 @@
+@import "minerva.variables";
+@import "minerva.mixins";
+
+// FIXME: Bad special page styling defaults.
+#section_0 {
+	padding-bottom: 0;
+}
+
+.collection {
+
+	// Push the content up to be close to the title
+	// FIXME: Bad special page styling defaults.
+	&.content {
+		padding-top: 0;
+	}
+
+	.collection-header {
+		text-align: center;
+		padding: 0 1em;
+		margin-bottom: 2em;
+
+		h1 {
+			font-weight: bold;
+		}
+
+		.collection-description {
+			color: @grayMediumLight;
+
+			margin-bottom: 1em;
+		}
+
+		.collection-owner {
+			&.mw-ui-icon-before:before {
+				margin-right: 0.5em;
+				width: 1em;
+			}
+		}
+
+		.collection-action-button {
+			padding: 0.5em 2em;
+		}
+	}
+
+	.collection-empty {
+		text-align: center;
+		* {
+			font-family: @fontFamily;
+		}
+		h3 {
+			padding-bottom: 0em;
+		}
+		h6 {
+			font-size: 0.8em;
+		}
+	}
+
+	.collection-items {
+	}
+
+	.collection-item {
+		@collectionItemPadding: 1em;
+
+		border: 1px solid @grayLightest;
+		padding: 0 @collectionItemPadding;
+		margin-bottom: 2em;
+
+		.collection-item-title {
+			font-size: 2em;
+			padding-bottom: 0;
+			// Reset .mw-mf-special #content_wrapper styles for headers...
+			// FIXME: Bad defaults.
+			text-align: left;
+			font-family: @fontFamilyHeading;
+			line-height: 1.3em;
+			color: black;
+			margin: 0;
+		}
+
+		.collection-item-footer {
+			// Make footer run to edges
+			margin: 0 -@collectionItemPadding;
+			padding: @collectionItemPadding;
+			text-align: right;
+			border-top: 1px solid @grayLightest;
+			font-weight: bold;
+		}
+	}
+
+}

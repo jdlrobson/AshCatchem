@@ -25,5 +25,10 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 $wgResourceModules = array_merge( $wgResourceModules, array(
-
+	'ext.collections.styles' => $wgGatherResourceFileModuleBoilerplate + array(
+		'styles' => array(
+			'ext.collections.styles/collections.less',
+		),
+		'group' => 'other',
+	),
 ) );

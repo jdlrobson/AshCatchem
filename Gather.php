@@ -32,6 +32,17 @@ $wgExtensionMessagesFiles['GatherAlias'] = __DIR__ . "/Gather.alias.php";
 // autoload extension classes
 $autoloadClasses = array (
 	'GatherHooks' => 'Gather.hooks',
+
+	'Collection' => 'models/Collection',
+
+	'CollectionStore' => 'stores/CollectionStore',
+	'WatchlistCollectionStore' => 'stores/WatchlistCollectionStore',
+
+	'View' => 'views/View',
+	'CollectionView' => 'views/CollectionView',
+	'CollectionItemCardView' => 'views/CollectionItemCardView',
+
+	'SpecialCollections' => 'specials/SpecialCollections',
 );
 
 foreach ( $autoloadClasses as $className => $classFilename ) {
@@ -40,6 +51,7 @@ foreach ( $autoloadClasses as $className => $classFilename ) {
 
 // use array_merge to ensure we do not override existing values set by core
 $wgSpecialPages = array_merge( $wgSpecialPages, array(
+	'Collections' => 'SpecialCollections',
 ) );
 
 // ResourceLoader modules
@@ -49,7 +61,7 @@ $wgSpecialPages = array_merge( $wgSpecialPages, array(
  * Agnostic to whether desktop or mobile specific.
  */
 $wgGatherResourceBoilerplate = array(
-	'localBasePath' => __DIR__,
+	'localBasePath' => __DIR__ . '/resources',
 	'remoteExtPath' => 'Gather',
 );
 

@@ -1,5 +1,11 @@
 {
 	"@metadata": {
 		"authors": []
-	}
+	},
+	"ext-gather-desc": "Getting stuff done.",
+	"mobile-frontend-collection-watchlist-title": "My Watchlist",
+	"mobile-frontend-collection-watchlist-description": "Pages I watch changes on.",
+	"mobile-frontend-collection-read-more": "Read more…",
+	"mobile-frontend-collection-empty": "Nothing in this collection yet...",
+	"mobile-frontend-collection-empty-footer": "I don't know how you got here but this is a sad place."
 }
