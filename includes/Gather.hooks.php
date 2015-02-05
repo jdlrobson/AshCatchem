@@ -1,10 +1,10 @@
 <?php
 /**
- * MobileFrontend.hooks.php
+ * Gather.hooks.php
  */
 
 /**
- * Hook handlers for MobileFrontend extension
+ * Hook handlers for Gather extension
  *
  * Hook handler method names should be in the form of:
  *	on<HookName>()

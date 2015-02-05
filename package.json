@@ -1,13 +1,13 @@
 {
-	"name": "MobileFrontend-dependencies",
-	"description": "Node.js dependencies used in MobileFrontend",
+	"name": "Gather-dependencies",
+	"description": "Node.js dependencies used in Gather",
 	"version": "0.0.1",
 	"scripts": {
 		"test": "grunt test"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://git.wikimedia.org/git/mediawiki/extensions/MobileFrontend.git"
+		"url": "git://git.wikimedia.org/git/mediawiki/extensions/Gather.git"
 	},
 	"dependencies": {
 		"grunt": "0.4.5",

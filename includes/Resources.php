@@ -1,6 +1,6 @@
 <?php
 /**
- * Definition of MobileFrontend's ResourceLoader modules.
+ * Definition of Gather's ResourceLoader modules.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

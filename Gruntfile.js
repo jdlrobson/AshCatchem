@@ -1,7 +1,7 @@
 /*!
  * Grunt file
  *
- * @package MobileFrontend
+ * @package Gather
  */
 
 /*jshint node:true, strict:false*/

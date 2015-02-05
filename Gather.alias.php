@@ -1,6 +1,6 @@
 <?php
 /**
- * Aliases for MobileFrontend extension
+ * Aliases for Gather extension
  *
  * @file
  * @ingroup Extensions
