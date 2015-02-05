@@ -63,8 +63,8 @@ class SpecialCollections extends SpecialPage {
 	}
 
 	/**
-	 * Render the special page using MobileCollectionView and given collection
-	 * @param MobileCollection $collection
+	 * Render the special page using CollectionView and given collection
+	 * @param Collection $collection
 	 */
 	public function render( $collection ) {
 		$out = $this->getOutput();
