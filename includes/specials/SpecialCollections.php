@@ -23,22 +23,42 @@ class SpecialCollections extends SpecialPage {
 			$args = explode( '/', $subpage );
 			// If there is a user argument, that's what we want to use
 			if ( isset( $args[0] ) ) {
+				// Show specified user's collections
 				// FIXME: Add error checking?
 				$user = User::newFromName( $args[0] );
 			} else {
-				// Otherwise just show the user's page
+				// Otherwise use current user
 				$user = $this->getUser();
 			}
 		} else {
 			$user = $this->getUser();
 		}
 
+		$id = 0;
+		if ( isset( $args ) && isset( $args[1] ) ) {
+			$id = $args[1];
+		}
+		$this->renderUserCollection( $user, $id );
+	}
+
+	/**
+	 * Renders a user collection
+	 * @param User $user collection owner
+	 * @param int $id collection id
+	 */
+	public function renderUserCollection( $user, $id ) {
 		$collection = new Collection(
 			$user,
 			$this->msg( 'mobile-frontend-collection-watchlist-title' ),
 			$this->msg( 'mobile-frontend-collection-watchlist-description' )
 		);
-		$collection->load( new WatchlistCollectionStore( $user ) );
+		// Watchlist lives at id 0
+		if ( (int)$id === 0 ) {
+			// Load from watchlist if the $user is valid
+			if ( $this->getUser()->getName() == $user->getName() ) {
+				$collection->load( new WatchlistCollectionStore( $user ) );
+			}
+		}
 		$this->render( $collection );
 	}
 
