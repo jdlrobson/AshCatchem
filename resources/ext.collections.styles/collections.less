@@ -104,8 +104,17 @@
 				vertical-align: bottom;
 			}
 
-			.collections-read-more-arrow:before {
-				background-size: auto 100%;
+			.collections-read-more-arrow {
+				// Need a small icon size
+				width: 1.5em;
+				min-width: 1.5em;
+
+				&:before {
+					background-size: auto 100%;
+					// Fix icon spacing
+					margin-left: 0.5em;
+					margin-right: 0;
+				}
 			}
 		}
 	}
