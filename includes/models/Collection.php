@@ -8,17 +8,18 @@
  * A collection of pages, which are represented by the MobilePage class.
  */
 class Collection implements IteratorAggregate {
-	protected $user, $title, $description;
+	protected $user, $title, $description, $public;
 
 	/**
 	 * @param User $user that owns the collection
 	 * @param string $title
 	 * @param string $description
 	 */
-	public function __construct( User $user, $title = '', $description = '' ) {
+	public function __construct( User $user, $title = '', $description = '', $public = true ) {
 		$this->user = $user;
 		$this->title = $title;
 		$this->description = $description;
+		$this->public = $public;
 	}
 
 	/**
@@ -72,6 +73,24 @@ class Collection implements IteratorAggregate {
 	 */
 	public function getDescription() {
 		return $this->description;
+	}
+
+	/**
+	 * Returns if the list is public
+	 *
+	 * @return boolean
+	 */
+	public function isPublic() {
+		return $this->public;
+	}
+
+	/**
+	 * Set if the list is public
+	 *
+	 * @param boolean $public
+	 */
+	public function setPublic( $public ) {
+		$this->public = $public;
 	}
 
 	/**
