@@ -4,6 +4,9 @@
  *
  * @file
  * @ingroup Extensions
+ * @author Jon Robson
+ * @author Joaquin Hernandez
+ * @author Rob Moen
  * @licence GNU General Public Licence 2.0 or later
  */
 
@@ -21,6 +24,7 @@ if ( !defined( 'MOBILEFRONTEND' ) ) {
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
 	'name' => 'Gather',
+	'author' => array( 'Jon Robson', 'Joaquin Hernandez', 'Rob Moen' ),
 	'descriptionmsg' => 'ext-gather-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Gather',
 	'license-name' => 'GPL-2.0+',
