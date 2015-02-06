@@ -110,6 +110,10 @@
 				min-width: 1.5em;
 
 				&:before {
+					// FIXME: mw-ui icons assume square/horizontal icons, this svg
+					// (next.svg) is vertical, so we have to switch the background-size.
+					// This shouldn't be necessary, either fix the icon(?) or mw-ui to
+					// support vertical icons.
 					background-size: auto 100%;
 					// Fix icon spacing
 					margin-left: 0.5em;
