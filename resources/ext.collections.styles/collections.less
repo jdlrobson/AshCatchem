@@ -115,15 +115,17 @@
 	 *  List of collections
 	 */
 
+	@overlayHeight: 6em;
+
 	.collection-card {
-		height: 14em;
+		height: @overlayHeight;
 		border: 1px solid @grayLightest;
 		position: relative;
 	}
 
 	.collection-card-overlay {
 		position: absolute;
-		height: 6em;
+		height: @overlayHeight;
 		background: rgba(0, 0, 0, 0.8);
 		padding: 1em;
 		bottom: 0;
