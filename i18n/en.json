@@ -3,6 +3,7 @@
 		"authors": []
 	},
 	"ext-gather-desc": "Getting stuff done.",
+	"mobile-frontend-collection-anon-view-lists": "You need to be logged in to see your Collections",
 	"mobile-frontend-collection-watchlist-title": "My Watchlist",
 	"mobile-frontend-collection-watchlist-description": "Pages I watch changes on.",
 	"mobile-frontend-collection-read-more": "Read more",

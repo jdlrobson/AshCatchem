@@ -3,6 +3,7 @@
 		"authors": []
 	},
 	"ext-gather-desc": "Extension description.",
+	"mobile-frontend-collection-anon-view-lists": "Text shown when trying to see your own collections on [[Special:Collections]] but the user is not logged in.",
 	"mobile-frontend-collection-watchlist-title": "Title used for special casing the Watchlist collection on the [[Special:Collections]] page. ",
 	"mobile-frontend-collection-watchlist-description": "Default description for special casing the Watchlist collection on the [[Special:Collections]] page.",
 	"mobile-frontend-collection-read-more": "Label for the read more link used on [[Special:Collections]].",

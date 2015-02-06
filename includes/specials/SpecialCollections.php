@@ -19,6 +19,7 @@ class SpecialCollections extends SpecialPage {
 	 * @param string $subpage The name of the page to edit
 	 */
 	public function execute( $subpage ) {
+
 		if ( $subpage ) {
 			$args = explode( '/', $subpage );
 			// If there is a user argument, that's what we want to use
@@ -31,6 +32,8 @@ class SpecialCollections extends SpecialPage {
 				$user = $this->getUser();
 			}
 		} else {
+			// For listing own lists, you need to be logged in
+			$this->requireLogin( 'mobile-frontend-collection-anon-view-lists' );
 			$user = $this->getUser();
 		}
 
