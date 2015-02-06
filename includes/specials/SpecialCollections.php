@@ -19,6 +19,7 @@ class SpecialCollections extends SpecialPage {
 	 * @param string $subpage The name of the page to edit
 	 */
 	public function execute( $subpage ) {
+
 		if ( $subpage ) {
 			$args = explode( '/', $subpage );
 			// If there is a user argument, that's what we want to use
@@ -31,6 +32,8 @@ class SpecialCollections extends SpecialPage {
 				$user = $this->getUser();
 			}
 		} else {
+			// For listing own lists, you need to be logged in
+			$this->requireLogin( 'mobile-frontend-collection-anon-view-lists' );
 			$user = $this->getUser();
 		}
 
@@ -56,11 +59,14 @@ class SpecialCollections extends SpecialPage {
 		);
 		// Watchlist lives at id 0
 		if ( (int)$id === 0 ) {
-			// Load from watchlist if the $user is valid
-			if ( $this->getUser()->getName() == $user->getName() ) {
+			// Watchlist is private
+			$collection->setPublic( false );
+			if ( $this->isOwner( $user ) ) {
 				$collection->load( new WatchlistCollectionStore( $user ) );
 			}
 		}
+		// FIXME: For empty-collection and not-allowed-to-see-this we are doing the
+		// same thing right now.
 		$this->render( new CollectionView( $collection ) );
 	}
 
@@ -69,7 +75,7 @@ class SpecialCollections extends SpecialPage {
 	 * @param User $user owner of collections
 	 */
 	public function renderUserCollectionsList( $user ) {
-		$collectionsList = new CollectionsList( $user );
+		$collectionsList = new CollectionsList( $user, $this->isOwner( $user ) );
 		$this->render( new CollectionsListView( $collectionsList ) );
 	}
 
@@ -84,5 +90,16 @@ class SpecialCollections extends SpecialPage {
 		$out->addModules( array( 'ext.collections.styles' ) );
 		$out->setPageTitle( $view->getTitle() );
 		$view->render( $out );
+	}
+
+	/**
+	 * Returns if the user viewing the page is the owner of the collection/list
+	 * we are viewing
+	 * @param User $user user owner of the current page
+	 *
+	 * @return boolean
+	 */
+	private function isOwner( $user ) {
+		return $this->getUser()->getName() == $user->getName();
 	}
 }
