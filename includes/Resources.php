@@ -39,9 +39,14 @@ $wgResourceModules = array_merge( $wgResourceModules, array(
 
 	'ext.collections.styles' => $wgGatherResourceFileModuleBoilerplate + array(
 		'styles' => array(
-			'ext.collections.styles/icons.less',
-			'ext.collections.styles/collections.less',
+			'resources/ext.collections.styles/icons.less',
+			'resources/ext.collections.styles/collections.less',
 		),
+		'dependencies' => array(
+			'mediawiki.ui.anchor',
+			'skins.minerva.special.styles'
+		),
+		'position' => 'top',
 		'group' => 'other',
 	),
 

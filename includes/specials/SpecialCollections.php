@@ -50,11 +50,7 @@ class SpecialCollections extends SpecialPage {
 		$out = $this->getOutput();
 		$this->setHeaders();
 		$out->setProperty( 'unstyledContent', true );
-		$out->addModuleStyles( array(
-			// FIXME: Should be taken care of by MobileFrontend
-			'skins.minerva.special.styles',
-			'ext.collections.styles',
-		) );
+		$out->addModules( array( 'ext.collections.styles' ) );
 		$out->setPageTitle( $collection->getTitle() );
 		$view = new CollectionView( $collection );
 		$view->render( $out );
