@@ -64,6 +64,8 @@ class SpecialCollections extends SpecialPage {
 				$collection->load( new WatchlistCollectionStore( $user ) );
 			}
 		}
+		// FIXME: For empty-collection and not-allowed-to-see-this we are doing the
+		// same thing right now.
 		$this->render( new CollectionView( $collection ) );
 	}
 
