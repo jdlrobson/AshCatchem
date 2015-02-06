@@ -9,4 +9,11 @@ abstract class CollectionStore {
 	 * @return array titles
 	 */
 	abstract public function getTitles();
+
+	/**
+	 * Get current collection identifier
+	 *
+	 * @return int id
+	 */
+	abstract public function getId();
 }

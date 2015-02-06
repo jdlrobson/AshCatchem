@@ -38,6 +38,7 @@ $autoloadClasses = array (
 	'GatherHooks' => 'Gather.hooks',
 
 	'Collection' => 'models/Collection',
+	'CollectionsList' => 'models/CollectionsList',
 
 	'CollectionStore' => 'stores/CollectionStore',
 	'WatchlistCollectionStore' => 'stores/WatchlistCollectionStore',
@@ -45,6 +46,8 @@ $autoloadClasses = array (
 	'View' => 'views/View',
 	'CollectionView' => 'views/CollectionView',
 	'CollectionItemCardView' => 'views/CollectionItemCardView',
+	'CollectionsListView' => 'views/CollectionsListView',
+	'CollectionsListItemCardView' => 'views/CollectionsListItemCardView',
 
 	'SpecialCollections' => 'specials/SpecialCollections',
 );
