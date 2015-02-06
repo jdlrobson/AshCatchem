@@ -1,6 +1,21 @@
 @import "minerva.variables";
 @import "minerva.mixins";
 
+.reset-special-page-heading-styles() {
+	// Reset .mw-mf-special #content_wrapper styles for headers...
+	// FIXME: Bad defaults.
+	text-align: left;
+	font-family: @fontFamilyHeading;
+	line-height: 1.3em;
+	margin: 0;
+}
+.reset-link-styles() {
+	a, a:visited, a:hover {
+		color: inherit;
+		text-decoration: none;
+	}
+}
+
 // FIXME: Bad special page styling defaults.
 #section_0 {
 	padding-bottom: 0;
@@ -13,6 +28,10 @@
 	&.content {
 		padding-top: 0;
 	}
+
+	/*
+	 *  Collection page
+	 */
 
 	.collection-header {
 		text-align: center;
@@ -65,19 +84,10 @@
 		.collection-item-title {
 			font-size: 2em;
 			padding-bottom: 0;
-			// Reset .mw-mf-special #content_wrapper styles for headers...
-			// FIXME: Bad defaults.
-			text-align: left;
-			font-family: @fontFamilyHeading;
-			line-height: 1.3em;
-			margin: 0;
+			.reset-special-page-heading-styles();
 			// FIXME: Why is this inconsistent with other headings colors
 			color: black;
-
-			a, a:visited, a:hover {
-				color: inherit;
-				text-decoration: none;
-			}
+			.reset-link-styles();
 		}
 
 		.collection-item-footer {
@@ -94,14 +104,57 @@
 				vertical-align: bottom;
 			}
 
-			.collections-read-more-arrow:before {
-				// FIXME: mw-ui icons assume square/horizontal icons, this svg
-				// (next.svg) is vertical, so we have to switch the background-size.
-				// This shouldn't be necessary, either fix the icon(?) or mw-ui to
-				// support vertical icons.
-				background-size: auto 100%;
+			.collections-read-more-arrow {
+				// Need a small icon size
+				width: 1.5em;
+				min-width: 1.5em;
+
+				&:before {
+					// FIXME: mw-ui icons assume square/horizontal icons, this svg
+					// (next.svg) is vertical, so we have to switch the background-size.
+					// This shouldn't be necessary, either fix the icon(?) or mw-ui to
+					// support vertical icons.
+					background-size: auto 100%;
+					// Fix icon spacing
+					margin-left: 0.5em;
+					margin-right: 0;
+				}
 			}
 		}
 	}
 
+
+	/*
+	 *  List of collections
+	 */
+
+	@overlayHeight: 6em;
+
+	.collection-card {
+		height: @overlayHeight;
+		border: 1px solid @grayLightest;
+		position: relative;
+	}
+
+	.collection-card-overlay {
+		position: absolute;
+		height: @overlayHeight;
+		background: rgba(0, 0, 0, 0.8);
+		padding: 1em;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		span {
+			color: #FAF9F9;
+			padding: 0 0.25em;
+		}
+	}
+
+	.collection-card-title {
+		font-size: 2em;
+		padding-bottom: 0;
+		color: #FAF9F9;
+		.reset-special-page-heading-styles();
+		.reset-link-styles();
+	}
 }

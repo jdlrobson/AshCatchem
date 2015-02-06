@@ -29,6 +29,13 @@ class Collection implements IteratorAggregate {
 	protected $pages = array();
 
 	/**
+	 * The internal id of a collection
+	 *
+	 * @var int id
+	 */
+	protected $id;
+
+	/**
 	 * Adds a page to the collection.
 	 *
 	 * @param MobilePage $page
@@ -68,6 +75,36 @@ class Collection implements IteratorAggregate {
 	}
 
 	/**
+	 * Returns internal collection identifier
+	 *
+	 * @return int collection id
+	 */
+	public function getId() {
+		return $this->id;
+	}
+
+	/**
+	 * Returns pages count
+	 * @return int count of pages in collection
+	 */
+	public function getCount() {
+		return count( $this->pages );
+	}
+
+	/**
+	 * Return local url for collection
+	 * Example: /wiki/Special:Collections/user/id
+	 *
+	 * @return [type] [description]
+	 */
+	public function getUrl() {
+		return SpecialPage::getTitleFor( 'Collections' )
+			->getSubpage( $this->getOwner() )
+			->getSubpage( $this->getId() )
+			->getLocalURL();
+	}
+
+	/**
 	 * @return array list of pages
 	 */
 	public function getPages() {
@@ -80,6 +117,7 @@ class Collection implements IteratorAggregate {
 	 * @param CollectionStore $store
 	 */
 	public function load( CollectionStore $store ) {
+		$this->id = $store->getId();
 		$titles = $store->getTitles();
 		foreach ( $titles as $title ) {
 			$this->add( new MobilePage( $title ) );

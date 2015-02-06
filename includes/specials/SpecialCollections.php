@@ -37,8 +37,10 @@ class SpecialCollections extends SpecialPage {
 		$id = 0;
 		if ( isset( $args ) && isset( $args[1] ) ) {
 			$id = $args[1];
+			$this->renderUserCollection( $user, $id );
+		} else {
+			$this->renderUserCollectionsList( $user );
 		}
-		$this->renderUserCollection( $user, $id );
 	}
 
 	/**
@@ -59,20 +61,28 @@ class SpecialCollections extends SpecialPage {
 				$collection->load( new WatchlistCollectionStore( $user ) );
 			}
 		}
-		$this->render( $collection );
+		$this->render( new CollectionView( $collection ) );
+	}
+
+	/**
+	 * Renders a list of user collections
+	 * @param User $user owner of collections
+	 */
+	public function renderUserCollectionsList( $user ) {
+		$collectionsList = new CollectionsList( $user );
+		$this->render( new CollectionsListView( $collectionsList ) );
 	}
 
 	/**
 	 * Render the special page using CollectionView and given collection
-	 * @param Collection $collection
+	 * @param View $view
 	 */
-	public function render( $collection ) {
+	public function render( $view ) {
 		$out = $this->getOutput();
 		$this->setHeaders();
 		$out->setProperty( 'unstyledContent', true );
 		$out->addModules( array( 'ext.collections.styles' ) );
-		$out->setPageTitle( $collection->getTitle() );
-		$view = new CollectionView( $collection );
+		$out->setPageTitle( $view->getTitle() );
 		$view->render( $out );
 	}
 }

@@ -64,6 +64,14 @@ class CollectionView extends View {
 	}
 
 	/**
+	 * Return title of collection
+	 * @return string collection title
+	 */
+	public function getTitle() {
+		return $this->collection->getTitle();
+	}
+
+	/**
 	 * Returns the html for the items of a collection
 	 *
 	 * @return string Html
