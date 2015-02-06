@@ -30,13 +30,19 @@ class CollectionItemCardView extends View {
 			).
 			Html::closeElement( 'h2' ) .
 			Html::openElement( 'div', array( 'class' => 'collection-item-footer' ) ) .
-			Html::element( 'a',
+			Html::openElement( 'a',
 				array(
 					'href' => $title->getLocalUrl(),
-					'class' => MobileUI::anchorClass( 'progressive' ),
-				),
-				wfMessage( 'mobile-frontend-collection-read-more' )
+					'class' => MobileUI::anchorClass( 'progressive' )
+				)
 			) .
+			wfMessage( 'mobile-frontend-collection-read-more' ) .
+			Html::element(
+				'span',
+				array( 'class' => MobileUI::iconClass( 'collections-read-more', 'element', 'collections-read-more-arrow' ) ),
+				''
+			) .
+			Html::closeElement( 'a' ) .
 			Html::closeElement( 'div' ) .
 			Html::closeElement( 'div' );
 		return $html;

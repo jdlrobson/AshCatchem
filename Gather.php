@@ -65,7 +65,7 @@ $wgSpecialPages = array_merge( $wgSpecialPages, array(
  * Agnostic to whether desktop or mobile specific.
  */
 $wgGatherResourceBoilerplate = array(
-	'localBasePath' => __DIR__ . '/resources',
+	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'Gather',
 );
 
