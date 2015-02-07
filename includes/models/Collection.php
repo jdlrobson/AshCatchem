@@ -112,12 +112,12 @@ class Collection implements IteratorAggregate {
 
 	/**
 	 * Return local url for collection
-	 * Example: /wiki/Special:Collections/user/id
+	 * Example: /wiki/Special:Gather/user/id
 	 *
 	 * @return [type] [description]
 	 */
 	public function getUrl() {
-		return SpecialPage::getTitleFor( 'Collections' )
+		return SpecialPage::getTitleFor( 'Gather' )
 			->getSubpage( $this->getOwner() )
 			->getSubpage( $this->getId() )
 			->getLocalURL();

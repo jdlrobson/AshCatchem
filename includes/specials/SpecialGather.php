@@ -1,17 +1,17 @@
 <?php
 /**
- * SpecialCollections.php
+ * SpecialGather.php
  */
 
 /**
  * Render a collection of articles.
  */
-class SpecialCollections extends SpecialPage {
+class SpecialGather extends SpecialPage {
 	/**
 	 * Construct function
 	 */
 	public function __construct() {
-		parent::__construct( 'Collections' );
+		parent::__construct( 'Gather' );
 	}
 
 	/**
