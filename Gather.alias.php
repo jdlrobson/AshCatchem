@@ -11,5 +11,5 @@ $specialPageAliases = array();
 
 /** English (English) */
 $specialPageAliases['en'] = array(
-	'Collections' => array( 'Collections' ),
+	'Gather' => array( 'Gather' ),
 );

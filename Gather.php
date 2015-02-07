@@ -49,7 +49,7 @@ $autoloadClasses = array (
 	'CollectionsListView' => 'views/CollectionsListView',
 	'CollectionsListItemCardView' => 'views/CollectionsListItemCardView',
 
-	'SpecialCollections' => 'specials/SpecialCollections',
+	'SpecialGather' => 'specials/SpecialGather',
 );
 
 foreach ( $autoloadClasses as $className => $classFilename ) {
@@ -58,7 +58,7 @@ foreach ( $autoloadClasses as $className => $classFilename ) {
 
 // use array_merge to ensure we do not override existing values set by core
 $wgSpecialPages = array_merge( $wgSpecialPages, array(
-	'Collections' => 'SpecialCollections',
+	'Gather' => 'SpecialGather',
 ) );
 
 // ResourceLoader modules
